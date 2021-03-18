@@ -3,6 +3,7 @@ package com.company;
 public class DoView {
     double result;
     String typeOfResult;
+    final static String CURRENCY = "Kr";
 
     public DoView(double result, String typeOfResult) {
         this.result = result;
@@ -10,6 +11,6 @@ public class DoView {
     }
 
     public static void doView(double result, String typeOfResult){
-        System.out.printf("Du betaler %.2f%3s i %s%n",result,Main.CURRENCY,Main.MSG);
+        System.out.printf("Du betaler %.2f%3s i %s%n",result,CURRENCY,Main.MSG);
     }
 }
