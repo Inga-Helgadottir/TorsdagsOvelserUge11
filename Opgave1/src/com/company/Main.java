@@ -40,20 +40,21 @@ class Main { // jeg får altid et problem her hvis den hedder noget andet end ma
         //TODO:
         // lav en ny hund
         Owner ejer = new Owner();
-        Dog myDog = new Dog("woodie", true);
+        Dog myDog = new Dog("woodie", true, ejer);
         // sæt en ejer
-        ejer.setName("Henning");
+        myDog.setOwner("Henning");
         // TODO: tilføj to hvalpe når hundeklassen er klar til hvalpe
         myDog.setOffSpring("woodiesnoopie");
         myDog.setOffSpring("woodiesfido");
 
         // print alle hvalpe
 
-        String[] myOff = myDog.getOffSpring();//--------------------------------------------
-        for (String myD: myOff) {
-            System.out.println(myD);
+        Dog[] myOff = myDog.getOffSpring();
+        for (Dog myD: myOff) {
+            System.out.println("Puppy : " + myD);
         }
-        System.out.println(Arrays.toString(myOff));
+        System.out.println("\nDog children : " + Arrays.toString(myOff));
+        System.out.println("\nDog parent and it´s children : " + myDog + "\n");
         // print ejeren
         System.out.println("min hund er ejet af " + myDog.getOwner());
         // TODO: fodr hunden når hundeklassen er modificeret så den kan fodres
