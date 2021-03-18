@@ -29,9 +29,7 @@ Du betaler 86,40 Kr i MOMS
 
 import java.util.Scanner;
 public class Main {
-    final static int PRCVAT = 25;
     final static String MSG = "MOMS";
-    final static String CURRENCY = "Kr";
 
     public static void main(String[] args){
         RunController controller = new RunController();
