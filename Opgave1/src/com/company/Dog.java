@@ -1,19 +1,39 @@
 package com.company;
+
 import java.util.Arrays;
+
 public class Dog {
-    String woodie;
+    String name;
     boolean b;
-    Owner owner;
-    private String[] offSpring;
+    private Owner owner;
+    private Dog[] offSpring;
+//    private String[] offSpring;
     boolean isHungry;
 
-    public Dog(String woodie, boolean b) {
-        this.woodie = woodie;
+    public Dog(String name, boolean b, Owner owner) {
+        this.name = name;
         this.b = b;
-        offSpring = new String[5];
+        this.owner = owner;
+//        offSpring = new String[5];
+        offSpring = new Dog[5];
     }
 
-    public String[] setOffSpring(String child) {
+    public Dog[] setOffSpring(String child) {//public String[] setOffSpring(String child) {
+        boolean isPlaced = false;
+        boolean isPlaced2 = false;
+        int i = 0;
+        while(!isPlaced){
+            if(i > offSpring.length - 1) isPlaced = true;
+            if(offSpring[i] == null){
+//                offSpring[i] = child;
+                offSpring[i] = new Dog(child, true, this.owner);
+                isPlaced = true;
+            } else {
+                i++;
+            }
+        }
+        return offSpring;
+        /*
             boolean isPlaced = false;
             int i = 0;
             while(!isPlaced){
@@ -25,17 +45,10 @@ public class Dog {
                     i++;
                 }
             }
-            for (String o: offSpring) {
-                if(o == null){
-                    boolean noNull = false;
-                }else{
-                    boolean noNull = true;
-                }
-            }
-            return offSpring;
+            return offSpring;*/
     }
 
-    public String[] getOffSpring() {//------------------------------------
+    public Dog[] getOffSpring() {
         return offSpring;
     }
 
@@ -50,5 +63,16 @@ public class Dog {
     public String feedDog() {
         isHungry = false;
         return "The dog is eating now!";
+    }
+
+    @Override
+    public String toString() {
+        return "\nDog{" +
+                "woodie='" + name + '\'' +
+                ", b=" + b +
+                ", owner=" + owner +
+                ", isHungry=" + isHungry +
+                ", offspring=" + Arrays.toString(offSpring) +
+                '}';
     }
 }
