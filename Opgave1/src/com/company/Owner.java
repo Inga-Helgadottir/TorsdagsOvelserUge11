@@ -1,10 +1,9 @@
 package com.company;
 
 public class Owner {
-    String name;
+    private String name;
 
     public Owner() {
-        this.name = name;
     }
 
     public String getName(){
@@ -13,5 +12,12 @@ public class Owner {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
